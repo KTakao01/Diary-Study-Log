@@ -1,4 +1,8 @@
-#
+#　Singleton
+
+Algomaster
+https://algomaster.io/learn/lld/singleton-exercise
+Exercise2
 
 ## 自身の回答（間違い、6/10点）
 
