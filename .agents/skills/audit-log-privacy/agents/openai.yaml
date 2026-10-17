@@ -1,0 +1,4 @@
+interface:
+  display_name: "学習ログの情報監査"
+  short_description: "既存ログの個人情報・非公開情報を読み取り専用で監査し、伏せ字で報告する"
+  default_prompt: "$audit-log-privacy を使い、既存ログの個人情報・非公開情報・秘密情報を監査し、原文を再掲せず結果と未確認範囲を報告してください。"
