@@ -1,0 +1,36 @@
+title: Diary Study Log
+description: 技術書の読書、設計・実装の学習、試行錯誤の記録。
+lang: ja
+url: https://ktakao01.github.io
+baseurl: /Diary-Study-Log
+theme: jekyll-theme-primer
+
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+  - jekyll-relative-links
+
+titles_from_headings:
+  enabled: true
+  strip_title: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  # Jekyll 3 treats a colon in a page basename as a URI scheme.
+  - scope:
+      path: "WeeklyReport/2024/0506-0512weekly:継承と合成について.md"
+    values:
+      permalink: /WeeklyReport/2024/0506-0512weekly-inheritance-composition.html
+
+exclude:
+  - README.md
+  - AGENTS.md
+  - AuditLog
+  - "Year'sPlan"
+  - scripts
+  - Gemfile
+  - Gemfile.lock
+  - vendor
