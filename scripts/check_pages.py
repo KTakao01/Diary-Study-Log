@@ -17,7 +17,7 @@ class Links(HTMLParser):
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == 'a' and 'article-link' in attrs.get('class', '').split():
-            self.articles.append(attrs['href'])
+            self.articles.append((attrs['data-source'], attrs['href']))
         if tag == 'link' and attrs.get('rel') == 'stylesheet':
             self.assets.append(attrs['href'])
         if tag == 'script' and 'src' in attrs:
@@ -36,13 +36,15 @@ index = SITE / 'index.html'
 parser = Links()
 parser.feed(index.read_text())
 expected = {
-    SITE / path.relative_to(ROOT).with_suffix('.html')
+    path.relative_to(ROOT).as_posix()
     for folder in ('DailyReport', 'WeeklyReport', 'MonthlyReport')
     for path in (ROOT / folder).rglob('*.md')
 }
-actual = [output_path(url) for url in parser.articles]
+sources = [source for source, _ in parser.articles]
+actual = [output_path(url) for _, url in parser.articles]
+assert len(sources) == len(set(sources)), 'Duplicate source articles'
 assert len(actual) == len(set(actual)), 'Duplicate article links'
-assert set(actual) == expected, f'Article mismatch: missing={expected-set(actual)}, extra={set(actual)-expected}'
+assert set(sources) == expected, f'Article mismatch: missing={expected-set(sources)}, extra={set(sources)-expected}'
 for path in actual + [output_path(url) for url in parser.assets]:
     assert path.is_file(), f'Missing built file: {path.relative_to(SITE)}'
 for folder in ('AuditLog', "Year'sPlan", 'scripts', '.agents', '.github', '.vscode'):

@@ -29,4 +29,6 @@ GitHub の **Settings → Pages** で、Source を **Deploy from a branch**、Br
 
 既存の記事本文・ファイル名は変更していません。年間計画、監査記録、エージェント向け設定などはサイトの公開対象から除外しています。
 
+ファイル名に `:` がある既存の週報1件は、JekyllのURL生成エラーを避けるため `_config.yml` で公開URLを指定しています。
+
 PR では GitHub Pages と同じ Jekyll ビルドを行い、記事一覧の網羅性・リンク先・公開対象外ファイルを検証します。

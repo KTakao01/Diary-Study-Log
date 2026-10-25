@@ -19,6 +19,11 @@ defaults:
       path: ""
     values:
       layout: default
+  # Jekyll 3 treats a colon in a page basename as a URI scheme.
+  - scope:
+      path: "WeeklyReport/2024/0506-0512weekly:継承と合成について.md"
+    values:
+      permalink: /WeeklyReport/2024/0506-0512weekly-inheritance-composition.html
 
 exclude:
   - README.md

@@ -36,7 +36,7 @@ title: 記事一覧
       {% assign title = filename %}
     {% endif %}
     <li data-article data-search="{{ title | append: ' ' | append: article.path | escape }}">
-      <a class="article-link" href="{{ article.url | relative_url | escape }}">{{ title | escape }}</a>
+      <a class="article-link" data-source="{{ article.path | escape }}" href="{{ article.url | relative_url | escape }}">{{ title | escape }}</a>
       {% unless title == filename %}<span class="article-filename">{{ filename | escape }}</span>{% endunless %}
     </li>
     {% endfor %}
