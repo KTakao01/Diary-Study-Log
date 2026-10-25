@@ -1,0 +1,48 @@
+---
+layout: default
+title: 記事一覧
+---
+<section class="intro" aria-labelledby="page-title">
+  <p class="eyebrow">LEARNING NOTES</p>
+  <h1 id="page-title">学びを、記録する。</h1>
+  <p>技術書を読んで考えたこと、設計や実装で試したこと。<br>結論だけでなく、疑問と試行錯誤の過程も残します。</p>
+</section>
+
+<nav class="category-nav" aria-label="記事の分類">
+  {% for category in site.data.categories %}
+  <a href="#{{ category.id }}">{{ category.title }}</a>
+  {% endfor %}
+</nav>
+
+<div class="search-box">
+  <label for="article-search">記事を探す</label>
+  <input id="article-search" type="search" placeholder="キーワード・日付で絞り込み" autocomplete="off">
+  <p id="search-status" role="status" aria-live="polite"></p>
+</div>
+
+{% for category in site.data.categories %}
+{% assign articles = site.pages | where_exp: "article", "article.path contains category.folder" | sort: category.sort | reverse %}
+<section id="{{ category.id }}" class="article-group" aria-labelledby="{{ category.id }}-title">
+  <div class="section-heading">
+    <h2 id="{{ category.id }}-title">{{ category.title }}</h2>
+    <span class="article-count">{{ articles.size }}件</span>
+  </div>
+  <p class="section-description">{{ category.description }}</p>
+  <ul class="article-list">
+    {% for article in articles %}
+    {% assign filename = article.name | remove: '.md' %}
+    {% assign title = article.title | strip_html | strip %}
+    {% if title == '' or title == 'done' or title == 'report' or title == 'したこと' %}
+      {% assign title = filename %}
+    {% endif %}
+    <li data-article data-search="{{ title | append: ' ' | append: article.path | escape }}">
+      <a class="article-link" href="{{ article.url | relative_url | escape }}">{{ title | escape }}</a>
+      {% unless title == filename %}<span class="article-filename">{{ filename | escape }}</span>{% endunless %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+
+<noscript><p>検索を使うにはJavaScriptを有効にしてください。記事一覧と記事の閲覧はそのまま利用できます。</p></noscript>
+<script src="{{ '/assets/js/article-search.js' | relative_url }}" defer></script>

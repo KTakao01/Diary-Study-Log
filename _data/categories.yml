@@ -1,0 +1,15 @@
+- id: daily
+  title: 日報・学習ログ
+  description: 読書の考察、技術の仕組み、設計・実装の練習。
+  folder: DailyReport/
+  sort: name
+- id: weekly
+  title: 週報
+  description: 一週間の取り組みと振り返り。
+  folder: WeeklyReport/
+  sort: path
+- id: monthly
+  title: 月報
+  description: 月ごとの学習と進捗のまとめ。
+  folder: MonthlyReport/
+  sort: name
