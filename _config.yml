@@ -31,6 +31,8 @@ exclude:
   - AuditLog
   - "Year'sPlan"
   - scripts
+  - tests
+  - docs
   - Gemfile
   - Gemfile.lock
   - vendor
