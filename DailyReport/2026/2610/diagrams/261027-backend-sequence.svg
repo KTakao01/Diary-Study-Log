@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="830" viewBox="0 0 1100 830" role="img" aria-labelledby="title desc">
+  <title id="title">バックエンドを設計対象にした本検索のシーケンス図</title>
+  <desc id="desc">外部のWebフロントが著者名を指定して検索APIを呼ぶ。バックエンドではSearchController、SearchService、BookDAO、データベースの順に依頼が伝わる。検索された行から本の一覧が返り、最後にHTTPの200 OKと本の一覧のJSONがフロントへ返る。通信を待つ間のフロントの処理や非同期実装の詳細は省略している。</desc>
+  <rect width="1100" height="830" fill="#ffffff" />
+  <rect x="20" y="20" width="190" height="750" rx="10" fill="#f6f7f9" stroke="#b5bfcb" stroke-width="1.5" />
+  <rect x="240" y="20" width="840" height="750" rx="10" fill="#f1f7fc" stroke="#9bb2c9" stroke-width="1.5" />
+  <text x="40" y="50" font-family="sans-serif" fill="#1c2938" font-size="20" font-weight="600">外部</text>
+  <text x="264" y="50" font-family="sans-serif" fill="#1c2938" font-size="20" font-weight="600">設計対象：バックエンド</text>
+  <rect x="35" y="70" width="160" height="50" rx="5" fill="#ffffff" stroke="#718197" stroke-width="1.5" />
+  <rect x="255" y="70" width="180" height="50" rx="5" fill="#ffffff" stroke="#426b91" stroke-width="1.5" />
+  <rect x="460" y="70" width="180" height="50" rx="5" fill="#ffffff" stroke="#426b91" stroke-width="1.5" />
+  <rect x="670" y="70" width="160" height="50" rx="5" fill="#ffffff" stroke="#426b91" stroke-width="1.5" />
+  <rect x="885" y="70" width="170" height="50" rx="5" fill="#ffffff" stroke="#426b91" stroke-width="1.5" />
+  <text x="115" y="101" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17" font-weight="600">Webフロント</text>
+  <text x="345" y="101" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17" font-weight="600">SearchController</text>
+  <text x="550" y="101" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17" font-weight="600">SearchService</text>
+  <text x="750" y="101" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17" font-weight="600">BookDAO</text>
+  <text x="970" y="101" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17" font-weight="600">データベース</text>
+  <path d="M115 120 V126 M115 132 V138 M115 144 V150 M115 156 V162 M115 168 V174 M115 180 V186 M115 192 V198 M115 204 V210 M115 216 V222 M115 228 V234 M115 240 V246 M115 252 V258 M115 264 V270 M115 276 V282 M115 288 V294 M115 300 V306 M115 312 V318 M115 324 V330 M115 336 V342 M115 348 V354 M115 360 V366 M115 372 V378 M115 384 V390 M115 396 V402 M115 408 V414 M115 420 V426 M115 432 V438 M115 444 V450 M115 456 V462 M115 468 V474 M115 480 V486 M115 492 V498 M115 504 V510 M115 516 V522 M115 528 V534 M115 540 V546 M115 552 V558 M115 564 V570 M115 576 V582 M115 588 V594 M115 600 V606 M115 612 V618 M115 624 V630 M115 636 V642 M115 648 V654 M115 660 V666 M115 672 V678 M115 684 V690 M115 696 V702 M115 708 V714 M115 720 V726 M115 732 V738 M345 120 V126 M345 132 V138 M345 144 V150 M345 156 V162 M345 168 V174 M345 180 V186 M345 192 V198 M345 204 V210 M345 216 V222 M345 228 V234 M345 240 V246 M345 252 V258 M345 264 V270 M345 276 V282 M345 288 V294 M345 300 V306 M345 312 V318 M345 324 V330 M345 336 V342 M345 348 V354 M345 360 V366 M345 372 V378 M345 384 V390 M345 396 V402 M345 408 V414 M345 420 V426 M345 432 V438 M345 444 V450 M345 456 V462 M345 468 V474 M345 480 V486 M345 492 V498 M345 504 V510 M345 516 V522 M345 528 V534 M345 540 V546 M345 552 V558 M345 564 V570 M345 576 V582 M345 588 V594 M345 600 V606 M345 612 V618 M345 624 V630 M345 636 V642 M345 648 V654 M345 660 V666 M345 672 V678 M345 684 V690 M345 696 V702 M345 708 V714 M345 720 V726 M345 732 V738 M550 120 V126 M550 132 V138 M550 144 V150 M550 156 V162 M550 168 V174 M550 180 V186 M550 192 V198 M550 204 V210 M550 216 V222 M550 228 V234 M550 240 V246 M550 252 V258 M550 264 V270 M550 276 V282 M550 288 V294 M550 300 V306 M550 312 V318 M550 324 V330 M550 336 V342 M550 348 V354 M550 360 V366 M550 372 V378 M550 384 V390 M550 396 V402 M550 408 V414 M550 420 V426 M550 432 V438 M550 444 V450 M550 456 V462 M550 468 V474 M550 480 V486 M550 492 V498 M550 504 V510 M550 516 V522 M550 528 V534 M550 540 V546 M550 552 V558 M550 564 V570 M550 576 V582 M550 588 V594 M550 600 V606 M550 612 V618 M550 624 V630 M550 636 V642 M550 648 V654 M550 660 V666 M550 672 V678 M550 684 V690 M550 696 V702 M550 708 V714 M550 720 V726 M550 732 V738 M750 120 V126 M750 132 V138 M750 144 V150 M750 156 V162 M750 168 V174 M750 180 V186 M750 192 V198 M750 204 V210 M750 216 V222 M750 228 V234 M750 240 V246 M750 252 V258 M750 264 V270 M750 276 V282 M750 288 V294 M750 300 V306 M750 312 V318 M750 324 V330 M750 336 V342 M750 348 V354 M750 360 V366 M750 372 V378 M750 384 V390 M750 396 V402 M750 408 V414 M750 420 V426 M750 432 V438 M750 444 V450 M750 456 V462 M750 468 V474 M750 480 V486 M750 492 V498 M750 504 V510 M750 516 V522 M750 528 V534 M750 540 V546 M750 552 V558 M750 564 V570 M750 576 V582 M750 588 V594 M750 600 V606 M750 612 V618 M750 624 V630 M750 636 V642 M750 648 V654 M750 660 V666 M750 672 V678 M750 684 V690 M750 696 V702 M750 708 V714 M750 720 V726 M750 732 V738 M970 120 V126 M970 132 V138 M970 144 V150 M970 156 V162 M970 168 V174 M970 180 V186 M970 192 V198 M970 204 V210 M970 216 V222 M970 228 V234 M970 240 V246 M970 252 V258 M970 264 V270 M970 276 V282 M970 288 V294 M970 300 V306 M970 312 V318 M970 324 V330 M970 336 V342 M970 348 V354 M970 360 V366 M970 372 V378 M970 384 V390 M970 396 V402 M970 408 V414 M970 420 V426 M970 432 V438 M970 444 V450 M970 456 V462 M970 468 V474 M970 480 V486 M970 492 V498 M970 504 V510 M970 516 V522 M970 528 V534 M970 540 V546 M970 552 V558 M970 564 V570 M970 576 V582 M970 588 V594 M970 600 V606 M970 612 V618 M970 624 V630 M970 636 V642 M970 648 V654 M970 660 V666 M970 672 V678 M970 684 V690 M970 696 V702 M970 708 V714 M970 720 V726 M970 732 V738" stroke="#8795a6" stroke-width="1.5" fill="none" />
+  <rect x="148" y="130" width="164" height="49" rx="4" fill="#ffffff" />
+  <text x="230" y="151" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">GET /books</text>
+  <text x="230" y="175" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">?author=夏目漱石</text>
+  <path d="M115 190 H345" stroke="#334c65" stroke-width="2" fill="none" />
+  <text x="447" y="230" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">searchByAuthor</text>
+  <text x="447" y="254" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">("夏目漱石")</text>
+  <path d="M345 270 H550" stroke="#334c65" stroke-width="2" fill="none" />
+  <text x="650" y="310" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">findByAuthor</text>
+  <text x="650" y="334" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">("夏目漱石")</text>
+  <path d="M550 350 H750" stroke="#334c65" stroke-width="2" fill="none" />
+  <text x="860" y="394" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">著者名を条件に</text>
+  <text x="860" y="418" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">SELECT</text>
+  <path d="M750 430 H970" stroke="#334c65" stroke-width="2" fill="none" />
+  <text x="860" y="490" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">該当する行</text>
+  <path d="M970 505 H963 M958 505 H951 M946 505 H939 M934 505 H927 M922 505 H915 M910 505 H903 M898 505 H891 M886 505 H879 M874 505 H867 M862 505 H855 M850 505 H843 M838 505 H831 M826 505 H819 M814 505 H807 M802 505 H795 M790 505 H783 M778 505 H771 M766 505 H759 M754 505 H750" stroke="#526c85" stroke-width="2" fill="none" />
+  <text x="650" y="560" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">Bookの一覧</text>
+  <path d="M750 575 H743 M738 575 H731 M726 575 H719 M714 575 H707 M702 575 H695 M690 575 H683 M678 575 H671 M666 575 H659 M654 575 H647 M642 575 H635 M630 575 H623 M618 575 H611 M606 575 H599 M594 575 H587 M582 575 H575 M570 575 H563 M558 575 H551" stroke="#526c85" stroke-width="2" fill="none" />
+  <text x="447" y="630" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">Bookの一覧</text>
+  <path d="M550 645 H543 M538 645 H531 M526 645 H519 M514 645 H507 M502 645 H495 M490 645 H483 M478 645 H471 M466 645 H459 M454 645 H447 M442 645 H435 M430 645 H423 M418 645 H411 M406 645 H399 M394 645 H387 M382 645 H375 M370 645 H363 M358 645 H351 M346 645 H345" stroke="#526c85" stroke-width="2" fill="none" />
+  <rect x="148" y="658" width="164" height="49" rx="4" fill="#ffffff" />
+  <text x="230" y="679" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">200 OK ＋</text>
+  <text x="230" y="703" text-anchor="middle" font-family="sans-serif" fill="#1c2938" font-size="17">本の一覧のJSON</text>
+  <path d="M345 715 H338 M333 715 H326 M321 715 H314 M309 715 H302 M297 715 H290 M285 715 H278 M273 715 H266 M261 715 H254 M249 715 H242 M237 715 H230 M225 715 H218 M213 715 H206 M201 715 H194 M189 715 H182 M177 715 H170 M165 715 H158 M153 715 H146 M141 715 H134 M129 715 H122 M117 715 H115" stroke="#526c85" stroke-width="2" fill="none" />
+  <text x="28" y="806" font-family="sans-serif" fill="#42546a" font-size="16">上から下へ処理が進む。通信を待つ間のフロントの処理・非同期実装の詳細は省略。</text>
+  <path d="M334 184 L345 190 L334 196 Z" fill="#334c65" />
+  <path d="M539 264 L550 270 L539 276 Z" fill="#334c65" />
+  <path d="M739 344 L750 350 L739 356 Z" fill="#334c65" />
+  <path d="M959 424 L970 430 L959 436 Z" fill="#334c65" />
+  <path d="M760 499 L750 505 L760 511" stroke="#526c85" stroke-width="2" fill="none" />
+  <path d="M560 569 L550 575 L560 581" stroke="#526c85" stroke-width="2" fill="none" />
+  <path d="M355 639 L345 645 L355 651" stroke="#526c85" stroke-width="2" fill="none" />
+  <path d="M125 709 L115 715 L125 721" stroke="#526c85" stroke-width="2" fill="none" />
+</svg>
