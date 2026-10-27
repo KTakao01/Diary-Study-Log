@@ -1,0 +1,18 @@
+sequenceDiagram
+    box 外部
+        participant F as Webフロント
+    end
+    box 設計対象のバックエンド
+        participant C as SearchController
+        participant S as SearchService
+        participant D as BookDAO
+        participant DB as データベース
+    end
+    F->>C: GET /books?author=夏目漱石
+    C->>S: searchByAuthor("夏目漱石")
+    S->>D: findByAuthor("夏目漱石")
+    D->>DB: 著者名を条件にSELECT
+    DB-->>D: 該当する行
+    D-->>S: Bookの一覧
+    S-->>C: Bookの一覧
+    C-->>F: 200 OK ＋ 本の一覧のJSON

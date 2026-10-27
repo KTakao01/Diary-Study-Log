@@ -1,0 +1,10 @@
+flowchart TB
+    F["外部アクター：Webフロント"]
+    subgraph BE["設計対象：バックエンド"]
+        B["《boundary》検索API"]
+        C("《control》著者名で本を検索する")
+        E["《entity》本（Book）"]
+        B --- C
+        C --- E
+    end
+    F --- B
