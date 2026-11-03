@@ -1,0 +1,39 @@
+name: Privacy audit
+
+on:
+  workflow_run:
+    workflows: [Privacy audit request]
+    types: [requested, completed]
+  workflow_dispatch:
+    inputs:
+      pull_request_number:
+        description: Pull request number to audit again
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: read
+  statuses: write
+
+concurrency:
+  group: privacy-audit-${{ github.event.workflow_run.head_sha || inputs.pull_request_number }}
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out trusted default-branch code only
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && github.sha || 'refs/heads/main' }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Audit data and publish exact-revision status
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python3 scripts/privacy_ci.py

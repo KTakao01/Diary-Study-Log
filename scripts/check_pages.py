@@ -47,7 +47,7 @@ assert len(actual) == len(set(actual)), 'Duplicate article links'
 assert set(sources) == expected, f'Article mismatch: missing={expected-set(sources)}, extra={set(sources)-expected}'
 for path in actual + [output_path(url) for url in parser.assets]:
     assert path.is_file(), f'Missing built file: {path.relative_to(SITE)}'
-for folder in ('AuditLog', "Year'sPlan", 'scripts', '.agents', '.github', '.vscode'):
+for folder in ('AuditLog', "Year'sPlan", 'scripts', 'tests', 'docs', '.agents', '.github', '.vscode'):
     assert not (SITE / folder).exists(), f'Non-article folder published: {folder}'
 for filename in ('AGENTS.html', 'AGENTS.md', 'README.html', 'README.md'):
     assert not (SITE / filename).exists(), f'Non-article file published: {filename}'
