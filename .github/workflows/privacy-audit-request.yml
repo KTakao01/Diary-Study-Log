@@ -1,0 +1,28 @@
+name: Privacy audit request
+
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  request:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Request trusted privacy audit
+        run: echo 'The default-branch workflow will audit this revision.'
+
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Test privacy audit controls without credentials
+        run: python3 -m unittest discover -s tests -p 'test_privacy*.py'
